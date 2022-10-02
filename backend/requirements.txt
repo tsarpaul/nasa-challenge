@@ -1,0 +1,6 @@
+pyopenssl
+flask
+requests
+flask_cors
+numpy
+pandas

@@ -1,0 +1,17 @@
+Stable Diffusion instructions:
+
+1. Install InvokeAI: https://github.com/invoke-ai/InvokeAI
+2. Edit configurations based on your machine's specs (we used an AWS g4dn.xlarge machine), follow the blog:
+https://towardsdatascience.com/how-to-fine-tune-stable-diffusion-using-textual-inversion-b995d7ecc095
+3. Fine tune styles using images in the backend/corpus directory:
+
+For example for icy worlds run: 
+python main.py --base ./configs/stable-diffusion/v1-finetune_style.yaml \
+    -t \
+    --actual_resume ./models/ldm/stable-diffusion-v1/model.ckpt \
+    -n icy \
+    --gpus 0, \
+    --data_root ./training_data/key/
+
+4. Should an embedding be trained, edit app.py to incorporate it's path, otherwise playgroundai.com will be used.
+
